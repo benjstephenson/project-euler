@@ -1,2 +1,2 @@
-upschema
+Project Euler problems in Scala.
 ========

@@ -14,10 +14,7 @@ object EvenFibonacci {
     lazy val fibStream: Stream[Int] = 1 #:: fibStream.scanLeft(1)(_ + _)
 
     val sum = fibStream.takeWhile(_ < 4000000).tail.foldLeft(0: BigInt) { (acc, value) =>
-      value match {
-        case x if x % 2 == 0 => acc + x
-        case _ => acc
-      }
+      if (value % 2 == 0) acc + value else acc
     }
 
     println(s"total : $sum")

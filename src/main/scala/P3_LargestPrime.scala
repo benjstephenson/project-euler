@@ -1,6 +1,6 @@
 package org.bste.euler
 
-object LargestPrime {
+object P3_LargestPrime {
 
   def main(args: Array[String]) = {
 

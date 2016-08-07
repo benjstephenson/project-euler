@@ -11,7 +11,7 @@ class P2_EvenFibonacci(limit: BigInt = 4000000) extends Problem {
   |By considering the terms in the Fibonacci sequence whose values do not exceed four million,
   |find the sum of the even-valued terms.""".stripMargin
 
-  val answer = solve().toString
+  def answer = solve().toString
 
   private def solve() = {
     lazy val fibStream: Stream[Int] = 1 #:: fibStream.scanLeft(1)(_ + _)

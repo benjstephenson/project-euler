@@ -10,7 +10,7 @@ class P1_MultiplesThreeAndFive(limit: Int = 1000) extends Problem {
   |The sum of these multiples is 23.
   |Find the sum of all the multiples of 3 or 5 below 1000.""".stripMargin
 
-  val answer = solve().toString
+  def answer = solve().toString
 
   private def solve() = {
     (0 until limit).filter { x => x % 3 == 0 || x % 5 == 0 }.sum

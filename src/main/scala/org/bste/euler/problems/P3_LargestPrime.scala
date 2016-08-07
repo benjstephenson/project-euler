@@ -10,7 +10,7 @@ class P3_LargestPrime(limit: Long = 600851475143L) extends Problem {
     |What is the largest prime factor of the number 600851475143?""".stripMargin
 
 
-  val answer = solve().toString
+  def answer = solve().toString
 
   private def solve() = {
     def factors(n: Long): List[Long] = (2 to math.sqrt(n).toInt)

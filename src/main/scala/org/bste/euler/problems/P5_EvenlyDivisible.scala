@@ -1,29 +1,27 @@
 package org.bste.euler.problems
 
+import org.bste.euler.Problem
+
 import scala.annotation.tailrec
 
-object P5_EvenlyDivisible {
+class P5_EvenlyDivisible(limit: Int = 20) extends Problem {
 
-  /* 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
-   * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
-   */
+  val title = "Problem 5 - Evenly Divisible Numers"
 
-  def main(args: Array[String]) = {
+  val description = """|2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+    |What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?""".stripMargin
 
-    val result = check(1)
+  def answer = solve.toString
 
-    println(result)
+  private def solve = {
+    val nums = (1 to limit).toList
+
+    @tailrec
+    def check(n: Int): Int = {
+      val highestDivisor = nums.takeWhile(x => n % x == 0).last
+      if (highestDivisor == limit) n else check(n+1)
+    }
+
+    check(1)
   }
-
-  def divides(x: Int): Boolean = {
-    val highestDivisor = (1 to 20).takeWhile(n => x % n == 0).toList
-
-    if (highestDivisor.last == 20) true else false
-  }
-
-  @tailrec
-  def check(n: Int): Int = {
-    if (divides(n)) n else check(n+1)
-  }
-
 }

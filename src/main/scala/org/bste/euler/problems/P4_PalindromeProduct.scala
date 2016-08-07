@@ -11,13 +11,10 @@ class P4_PalindromeProduct(digitSize: Int = 3) extends Problem {
    |Find the largest palindrome made from the product of two 3-digit numbers.""".stripMargin
 
 
-  val answer = solve.toString
-
+  def answer = solve.toString
 
   private def solve = {
-
     val nums = (100 to 999).reverse
-
     val results = nums.flatMap { a =>
       nums.map { b => a * b }
     }.filter(x => x.toString == x.toString.reverse)

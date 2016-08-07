@@ -3,7 +3,7 @@ package org.bste.euler
 trait Problem {
   val title: String
   val description: String
-  val answer: String
+  def answer: String
 
   def printResult() = {
     println(title)

@@ -1,4 +1,4 @@
-package org.bste.euler
+package org.bste.euler.problems
 
 object P6_SumOfSquares {
 

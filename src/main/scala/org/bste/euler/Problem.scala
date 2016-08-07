@@ -5,9 +5,9 @@ trait Problem {
   val description: String
   val answer: String
 
-  def solve() = {
+  def printResult() = {
     println(title)
     println(description)
-    println(s"Anser - $answer")
+    println(s"Anser - $answer\n")
   }
 }

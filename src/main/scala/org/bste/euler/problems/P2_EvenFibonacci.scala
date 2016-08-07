@@ -16,11 +16,11 @@ class P2_EvenFibonacci(limit: BigInt = 4000000) extends Problem {
   private def solve() = {
     lazy val fibStream: Stream[Int] = 1 #:: fibStream.scanLeft(1)(_ + _)
 
-    val sum = fibStream.takeWhile(_ < limit).tail.foldLeft(0: BigInt) { (acc, value) =>
+    val result = fibStream.takeWhile(_ < limit).tail.foldLeft(0: BigInt) { (acc, value) =>
       if (value % 2 == 0) acc + value else acc
     }
 
-    sum
+    result
   }
 
 }

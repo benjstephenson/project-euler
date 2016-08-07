@@ -6,8 +6,9 @@ object Euler extends App {
 
   Seq(new P1_MultiplesThreeAndFive,
     new P2_EvenFibonacci,
-    new P3_LargestPrime
-  ) foreach( _.solve )
+    new P3_LargestPrime,
+    new P4_PalindromeProduct
+  ) foreach( _.printResult )
 
 
 }

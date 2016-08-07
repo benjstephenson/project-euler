@@ -4,7 +4,10 @@ import org.bste.euler.problems._
 
 object Euler extends App {
 
-  val problem  = new P1_MultiplesThreeAndFive(limit = 10)
-  problem.solve()
+  Seq(new P1_MultiplesThreeAndFive,
+    new P2_EvenFibonacci,
+    new P3_LargestPrime
+  ) foreach( _.solve )
+
 
 }

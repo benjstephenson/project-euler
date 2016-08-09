@@ -2,7 +2,7 @@ package org.bste.euler.problems
 
 import org.bste.euler.Problem
 
-class P4_PalindromeProduct(digitSize: Int = 3) extends Problem {
+class P4_PalindromeProduct(start: Int = 100, end: Int = 999) extends Problem {
 
   val title = "Problem 4 - Largest Palendrome Product"
 
@@ -14,7 +14,7 @@ class P4_PalindromeProduct(digitSize: Int = 3) extends Problem {
   def answer = solve.toString
 
   private def solve = {
-    val nums = (100 to 999).reverse
+    val nums = (start to end).reverse
     val results = nums.flatMap { a =>
       nums.map { b => a * b }
     }.filter(x => x.toString == x.toString.reverse)
